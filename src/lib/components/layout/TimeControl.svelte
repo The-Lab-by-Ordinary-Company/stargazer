@@ -17,6 +17,7 @@
   // buttons without flicker).
   let collapseTimer: ReturnType<typeof setTimeout> | null = null;
   let wiggle = $state(false);
+  const hasHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
 
   function expandOnClick(): void {
     if (collapseTimer) { clearTimeout(collapseTimer); collapseTimer = null; }
@@ -199,9 +200,9 @@
   feels physical because border-radius and padding also transition.
 -->
 <aside
-  class="pointer-events-auto absolute bottom-4 left-1/2 z-40 -translate-x-1/2 sm:bottom-6"
-  onmouseenter={onIslandEnter}
-  onmouseleave={onIslandLeave}
+  class="pointer-events-auto absolute bottom-4 left-1/2 z-[55] -translate-x-1/2 sm:bottom-6"
+  onmouseenter={hasHover ? onIslandEnter : undefined}
+  onmouseleave={hasHover ? onIslandLeave : undefined}
 >
   <div
     class={cn(

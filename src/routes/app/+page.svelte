@@ -65,11 +65,13 @@
   <title>Stargazer · Live observatory</title>
 </svelte:head>
 
-<main
-  class="relative h-dvh w-screen overflow-hidden bg-background"
-  style={isMobile && $mobileDrawerHeight > 0 ? `padding-bottom: ${$mobileDrawerHeight}px` : ''}
->
-  <Scene />
+<main class="relative h-dvh w-screen overflow-hidden bg-background">
+  <div
+    class="absolute inset-0 transition-[bottom] duration-300 ease-out"
+    style={isMobile && $mobileDrawerHeight > 0 ? `bottom: ${$mobileDrawerHeight}px` : ''}
+  >
+    <Scene />
+  </div>
 
   <!-- Search button (top-left): opens command palette -->
   <button
@@ -141,7 +143,7 @@
   <!-- Footer -->
   <div
     class={cn(
-      'pointer-events-none absolute bottom-12 sm:bottom-2 left-2 z-30 mono text-[9px] sm:text-[8px] uppercase tracking-[0.16em] text-white/30 transition-opacity duration-500 ease-out sm:left-6',
+      'pointer-events-none absolute top-4 right-4 sm:bottom-2 sm:top-auto sm:right-auto sm:left-6 z-30 mono text-[9px] sm:text-[8px] uppercase tracking-[0.16em] text-white/30 transition-opacity duration-500 ease-out',
       showUI ? 'opacity-100' : 'opacity-0'
     )}
   >

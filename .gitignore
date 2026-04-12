@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # PWA generated assets
 dev-dist
+
+# Internal docs (specs, plans)
+docs

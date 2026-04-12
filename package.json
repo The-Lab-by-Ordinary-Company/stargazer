@@ -1,8 +1,8 @@
 {
   "name": "stargazer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
-  "description": "An open-source space data aggregation and visualization tool. Live ISS tracking, NASA imagery, and more — built around a 3D Earth.",
+  "description": "A real-time, interactive 3D solar system explorer. Track planets, moons, the ISS, spacecraft, and satellites with live data from NASA, JPL, and ESA.",
   "type": "module",
   "scripts": {
     "dev": "vite dev",

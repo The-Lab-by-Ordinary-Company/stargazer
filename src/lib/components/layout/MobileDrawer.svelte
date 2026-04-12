@@ -1,6 +1,7 @@
 <script lang="ts">
   import { selection } from '$stores/selection';
   import { infoPanelOpen } from '$stores/ui';
+  import { mobileDrawerHeight } from '$stores/cameraDistance';
   import RightPanel from './RightPanel.svelte';
 
   const PEEK = 140;
@@ -84,6 +85,11 @@
     } else {
       snapHeight = 0;
     }
+  });
+
+  $effect(() => {
+    mobileDrawerHeight.set(currentHeight);
+    return () => mobileDrawerHeight.set(0);
   });
 
   $effect(() => {

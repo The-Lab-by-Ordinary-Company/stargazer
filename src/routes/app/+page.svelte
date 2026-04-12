@@ -18,7 +18,7 @@
   import { infoPanelOpen, closeInfoPanel } from '$stores/ui';
   import { introComplete } from '$stores/intro';
   import { selection, SOLAR_SYSTEM_VIEW } from '$stores/selection';
-  import { cameraOriginDistance } from '$stores/cameraDistance';
+  import { cameraOriginDistance, mobileDrawerHeight } from '$stores/cameraDistance';
   import { cn } from '$utils/cn';
 
   const LOST_THRESHOLD = 8000;
@@ -65,7 +65,10 @@
   <title>Stargazer · Live observatory</title>
 </svelte:head>
 
-<main class="relative h-dvh w-screen overflow-hidden bg-background">
+<main
+  class="relative h-dvh w-screen overflow-hidden bg-background"
+  style={isMobile && $mobileDrawerHeight > 0 ? `padding-bottom: ${$mobileDrawerHeight}px` : ''}
+>
   <Scene />
 
   <!-- Search button (top-left): opens command palette -->
@@ -138,7 +141,7 @@
   <!-- Footer -->
   <div
     class={cn(
-      'pointer-events-none absolute bottom-2 left-2 z-30 mono text-[9px] sm:text-[8px] uppercase tracking-[0.16em] text-white/30 transition-opacity duration-500 ease-out sm:left-6',
+      'pointer-events-none absolute bottom-12 sm:bottom-2 left-2 z-30 mono text-[9px] sm:text-[8px] uppercase tracking-[0.16em] text-white/30 transition-opacity duration-500 ease-out sm:left-6',
       showUI ? 'opacity-100' : 'opacity-0'
     )}
   >

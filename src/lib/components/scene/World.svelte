@@ -1,7 +1,7 @@
 <script lang="ts">
   import { T, useTask, useThrelte } from '@threlte/core';
   import { OrbitControls, interactivity } from '@threlte/extras';
-  import { Color, MOUSE, Vector3 } from 'three';
+  import { Color, MOUSE, TOUCH, Vector3 } from 'three';
   import type { OrbitControls as ThreeOrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { get } from 'svelte/store';
   import PlanetBody from './PlanetBody.svelte';
@@ -84,6 +84,10 @@
     controls.panSpeed = 0.5;
     controls.rotateSpeed = 0.5;
     controls.zoomSpeed = 0.8;
+    controls.touches = {
+      ONE: TOUCH.PAN,
+      TWO: TOUCH.DOLLY_ROTATE
+    };
   });
 
   // ── Tracking state ─────────────────────────────────────────────────────

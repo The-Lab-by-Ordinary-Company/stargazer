@@ -202,7 +202,6 @@
   class="pointer-events-auto absolute bottom-4 left-1/2 z-40 -translate-x-1/2 sm:bottom-6"
   onmouseenter={onIslandEnter}
   onmouseleave={onIslandLeave}
-  ontouchstart={onIslandEnter}
 >
   <div
     class={cn(
@@ -210,10 +209,10 @@
       $timeExpanded ? 'time-expanded' : 'time-collapsed',
       wiggle && !$timeExpanded && 'time-wiggle'
     )}
-    onclick={!$timeExpanded ? expandOnClick : undefined}
+    onclick={expandOnClick}
     onkeydown={!$timeExpanded ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); expandOnClick(); } } : undefined}
-    role={!$timeExpanded ? 'button' : undefined}
-    tabindex={!$timeExpanded ? 0 : -1}
+    role="button"
+    tabindex={0}
   >
     <!-- ── Always visible: status + time ──────────────────────────── -->
     <div class="flex items-center justify-center gap-2">

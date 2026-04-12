@@ -13,7 +13,7 @@
    * here brightens the whole viewport.
    */
 
-  const texturePromise = useTexture('/textures/stars_milkyway_4k.webp');
+  const texturePromise = useTexture('/textures/starfield_milkyway_8k.jpg');
 
   const vertexShader = /* glsl */ `
     #include <common>
@@ -54,7 +54,7 @@
     side: BackSide,
     uniforms: {
       uMap: { value: null },
-      uBrightness: { value: 2.8 },
+      uBrightness: { value: 2.0 },
       // Faint near-white lift with the smallest hint of cool blue.
       // RGB in [0,1]. Same colour also applied as scene.background in
       // World.svelte for consistency.

@@ -112,7 +112,7 @@
       </span>
       <button
         type="button"
-        onclick={skip}
+        onclick={(e) => { e.stopPropagation(); skip(); }}
         class="mono text-[9px] uppercase tracking-[0.16em] text-[#8A8A85] hover:text-[#141414] transition-colors duration-150"
       >
         Skip tour
@@ -149,7 +149,7 @@
       {/if}
       <button
         type="button"
-        onclick={next}
+        onclick={(e) => { e.stopPropagation(); next(); }}
         class="inline-flex h-10 items-center px-6 bg-[#E8441E] text-white mono text-[11px] uppercase tracking-[0.14em] transition-[background-color,transform] duration-150 hover:bg-[#d03a15] active:scale-[0.96]"
       >
         {isLast ? 'Start exploring' : 'Next'}

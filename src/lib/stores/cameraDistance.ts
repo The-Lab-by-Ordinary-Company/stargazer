@@ -16,3 +16,5 @@ import { writable } from 'svelte/store';
 export const cameraTargetDistance = writable<number>(250);
 
 export const cameraOriginDistance = writable<number>(250);
+
+export const mobileDrawerHeight = writable<number>(0);

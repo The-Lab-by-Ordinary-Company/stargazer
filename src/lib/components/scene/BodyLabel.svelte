@@ -72,12 +72,7 @@
 
     // Selected body, its parent, and its children: always visible
     if (sel !== null && sel !== SOLAR_SYSTEM_VIEW) {
-      if (sel === object.id) return true;
-      const selected = getById(sel);
-      if (selected) {
-        if (selected.parent === object.id) return true;
-        if (object.parent === sel) return true;
-      }
+      return sel === object.id;
     }
 
     // Distance-based tier check (Google Maps-style progressive disclosure)

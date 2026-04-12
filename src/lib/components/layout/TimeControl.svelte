@@ -17,6 +17,7 @@
   // buttons without flicker).
   let collapseTimer: ReturnType<typeof setTimeout> | null = null;
   let wiggle = $state(false);
+  const hasHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
 
   function expandOnClick(): void {
     if (collapseTimer) { clearTimeout(collapseTimer); collapseTimer = null; }
@@ -35,8 +36,11 @@
 
   function onIslandLeave(): void {
     if (!$timeExpanded) return;
-    // Collapse immediately on hover-off
     if (collapseTimer) { clearTimeout(collapseTimer); collapseTimer = null; }
+    timeExpanded.set(false);
+  }
+
+  function onBackdropTap(): void {
     timeExpanded.set(false);
   }
 
@@ -198,11 +202,18 @@
   control panel using CSS grid + max-height transitions. The morph
   feels physical because border-radius and padding also transition.
 -->
+{#if $timeExpanded}
+  <div
+    class="fixed inset-0 z-[39]"
+    onclick={onBackdropTap}
+    onkeydown={undefined}
+    role="presentation"
+  ></div>
+{/if}
 <aside
   class="pointer-events-auto absolute bottom-4 left-1/2 z-40 -translate-x-1/2 sm:bottom-6"
-  onmouseenter={onIslandEnter}
-  onmouseleave={onIslandLeave}
-  ontouchstart={onIslandEnter}
+  onmouseenter={hasHover ? onIslandEnter : undefined}
+  onmouseleave={hasHover ? onIslandLeave : undefined}
 >
   <div
     class={cn(
@@ -210,10 +221,10 @@
       $timeExpanded ? 'time-expanded' : 'time-collapsed',
       wiggle && !$timeExpanded && 'time-wiggle'
     )}
-    onclick={!$timeExpanded ? expandOnClick : undefined}
+    onclick={expandOnClick}
     onkeydown={!$timeExpanded ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); expandOnClick(); } } : undefined}
-    role={!$timeExpanded ? 'button' : undefined}
-    tabindex={!$timeExpanded ? 0 : -1}
+    role="button"
+    tabindex={0}
   >
     <!-- ── Always visible: status + time ──────────────────────────── -->
     <div class="flex items-center justify-center gap-2">

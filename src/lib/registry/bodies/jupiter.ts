@@ -20,7 +20,7 @@ export const JUPITER: TrackedObject = {
   parent: 'sun',
   offsetFn: (date, target) => getPlanetScenePosition(target, 'jupiter', date),
   rendererKind: 'planet-body',
-  cameraDistance: 35,
+  cameraDistance: 55,
   labelTier: 1,
   metadata: {
     subtitle: 'Sol V · The Gas Giant',

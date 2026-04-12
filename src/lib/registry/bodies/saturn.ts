@@ -24,7 +24,7 @@ export const SATURN: TrackedObject = {
   parent: 'sun',
   offsetFn: (date, target) => getPlanetScenePosition(target, 'saturn', date),
   rendererKind: 'planet-body',
-  cameraDistance: 30,
+  cameraDistance: 60,
   labelTier: 1,
   metadata: {
     subtitle: 'Sol VI · The Ringed Planet',

@@ -36,8 +36,11 @@
 
   function onIslandLeave(): void {
     if (!$timeExpanded) return;
-    // Collapse immediately on hover-off
     if (collapseTimer) { clearTimeout(collapseTimer); collapseTimer = null; }
+    timeExpanded.set(false);
+  }
+
+  function onBackdropTap(): void {
     timeExpanded.set(false);
   }
 
@@ -199,6 +202,14 @@
   control panel using CSS grid + max-height transitions. The morph
   feels physical because border-radius and padding also transition.
 -->
+{#if $timeExpanded}
+  <div
+    class="fixed inset-0 z-[54]"
+    onclick={onBackdropTap}
+    onkeydown={undefined}
+    role="presentation"
+  ></div>
+{/if}
 <aside
   class="pointer-events-auto absolute bottom-4 left-1/2 z-[55] -translate-x-1/2 sm:bottom-6"
   onmouseenter={hasHover ? onIslandEnter : undefined}

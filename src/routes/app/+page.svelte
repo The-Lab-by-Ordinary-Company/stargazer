@@ -148,9 +148,9 @@
     )}
   >
     <span class="inline-flex items-center gap-1.5">
-      <img src="/favicon.svg" alt="" width="16" height="16" class="h-4 w-4 opacity-70" />
-      Stargazer
-    </span> · <span class="text-white/20">Powered by <a href="https://lab.ordinarycompany.design/" target="_blank" rel="noreferrer" class="pointer-events-auto hover:text-white/40 transition-colors duration-150">The Lab</a></span>
+      <img src="/favicon.svg" alt="" width="16" height="16" class="h-4 w-4 flex-shrink-0 opacity-70" />
+      <span>Stargazer · <span class="text-white/20">Powered by <a href="https://lab.ordinarycompany.design/" target="_blank" rel="noreferrer" class="pointer-events-auto hover:text-white/40 transition-colors duration-150">The Lab</a></span></span>
+    </span>
   </div>
 
   <HoverTooltip />

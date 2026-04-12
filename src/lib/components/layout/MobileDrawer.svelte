@@ -99,7 +99,7 @@
   });
 </script>
 
-{#if isOpen || currentHeight > 0}
+{#if $selection !== null && (isOpen || currentHeight > 0)}
   <div
     bind:this={drawerRef}
     class="fixed inset-x-0 bottom-0 z-50 flex flex-col bg-[#F5F0E8] border-t border-[#141414]/15"

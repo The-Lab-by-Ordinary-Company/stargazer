@@ -7,6 +7,7 @@
   import KeyboardNav from '$components/layout/KeyboardNav.svelte';
   import CommandPalette from '$components/layout/CommandPalette.svelte';
   import WelcomeTutorial from '$components/layout/WelcomeTutorial.svelte';
+  import MobileDrawer from '$components/layout/MobileDrawer.svelte';
   import { iss } from '$stores/iss';
   import { tiangong } from '$stores/tiangong';
   import {
@@ -21,6 +22,16 @@
   import { cn } from '$utils/cn';
 
   const LOST_THRESHOLD = 8000;
+
+  let innerWidth = $state(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const isMobile = $derived(innerWidth < 640);
+
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    const onResize = () => { innerWidth = window.innerWidth; };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  });
 
   let paletteOpen = $state(false);
   // UI is always visible so tutorial can point at real elements
@@ -77,29 +88,33 @@
   <!-- Command palette -->
   <CommandPalette bind:open={paletteOpen} />
 
-  <!-- Info panel (right): slides in on body selection -->
-  <aside
-    class={cn(
-      'pointer-events-auto absolute right-0 top-0 z-50 flex h-full w-full sm:w-[320px] flex-col',
-      'info-panel',
-      $infoPanelOpen ? 'info-open' : 'info-closed'
-    )}
-    aria-hidden={!$infoPanelOpen}
-  >
-    <div class="relative flex h-full max-h-dvh flex-col overflow-y-auto overflow-x-hidden scrollbar-thin panel rounded-none sm:my-4 sm:mr-0 sm:max-h-[calc(100dvh-2rem)]">
-      <button
-        type="button"
-        onclick={() => closeInfoPanel()}
-        class="absolute right-3 top-3 z-10 flex h-10 w-10 sm:h-7 sm:w-7 items-center justify-center bg-[#F0ECE4] text-[#8A8A85] transition-[background-color,color,scale] duration-150 ease-out hover:bg-[#141414] hover:text-white active:scale-[0.92]"
-        aria-label="Close info panel"
-      >
-        <svg viewBox="0 0 14 14" fill="none" class="h-3 w-3" aria-hidden="true">
-          <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-        </svg>
-      </button>
-      <RightPanel />
-    </div>
-  </aside>
+  <!-- Info panel: desktop right-side, mobile bottom drawer -->
+  {#if isMobile}
+    <MobileDrawer />
+  {:else}
+    <aside
+      class={cn(
+        'pointer-events-auto absolute right-0 top-0 z-50 flex h-full w-[320px] flex-col',
+        'info-panel',
+        $infoPanelOpen ? 'info-open' : 'info-closed'
+      )}
+      aria-hidden={!$infoPanelOpen}
+    >
+      <div class="relative flex h-full max-h-dvh flex-col overflow-y-auto overflow-x-hidden scrollbar-thin panel rounded-none sm:my-4 sm:mr-0 sm:max-h-[calc(100dvh-2rem)]">
+        <button
+          type="button"
+          onclick={() => closeInfoPanel()}
+          class="absolute right-3 top-3 z-10 flex h-7 w-7 items-center justify-center bg-[#F0ECE4] text-[#8A8A85] transition-[background-color,color,scale] duration-150 ease-out hover:bg-[#141414] hover:text-white active:scale-[0.92]"
+          aria-label="Close info panel"
+        >
+          <svg viewBox="0 0 14 14" fill="none" class="h-3 w-3" aria-hidden="true">
+            <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </button>
+        <RightPanel />
+      </div>
+    </aside>
+  {/if}
 
   <!-- Lost in space: return to solar system (above time scrubber) -->
   {#if $cameraOriginDistance > LOST_THRESHOLD && $selection === null}

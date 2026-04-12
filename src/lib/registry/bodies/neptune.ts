@@ -24,7 +24,7 @@ export const NEPTUNE: TrackedObject = {
   parent: 'sun',
   offsetFn: (date, target) => getPlanetScenePosition(target, 'neptune', date),
   rendererKind: 'planet-body',
-  cameraDistance: 12,
+  cameraDistance: 25,
   labelTier: 1,
   metadata: {
     subtitle: 'Sol VIII · The Distant Ice Giant',

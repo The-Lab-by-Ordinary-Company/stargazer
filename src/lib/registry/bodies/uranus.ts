@@ -25,7 +25,7 @@ export const URANUS: TrackedObject = {
   parent: 'sun',
   offsetFn: (date, target) => getPlanetScenePosition(target, 'uranus', date),
   rendererKind: 'planet-body',
-  cameraDistance: 12,
+  cameraDistance: 25,
   labelTier: 1,
   metadata: {
     subtitle: 'Sol VII · The Tilted Ice Giant',

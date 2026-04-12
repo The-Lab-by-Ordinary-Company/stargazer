@@ -204,14 +204,14 @@
 -->
 {#if $timeExpanded}
   <div
-    class="fixed inset-0 z-[54]"
+    class="fixed inset-0 z-[39]"
     onclick={onBackdropTap}
     onkeydown={undefined}
     role="presentation"
   ></div>
 {/if}
 <aside
-  class="pointer-events-auto absolute bottom-4 left-1/2 z-[55] -translate-x-1/2 sm:bottom-6"
+  class="pointer-events-auto absolute bottom-4 left-1/2 z-40 -translate-x-1/2 sm:bottom-6"
   onmouseenter={hasHover ? onIslandEnter : undefined}
   onmouseleave={hasHover ? onIslandLeave : undefined}
 >

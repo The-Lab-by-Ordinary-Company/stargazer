@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Stargazer">
+  <defs>
+    <clipPath id="d">
+      <circle cx="120" cy="120" r="112"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#d)">
+    <circle cx="120" cy="120" r="112" fill="#141414"/>
+    <ellipse cx="120" cy="220" rx="180" ry="80" fill="#e8441e"/>
+    <polygon transform="translate(120 80)" points="0,-44 8,-8 44,0 8,8 0,44 -8,8 -44,0 -8,-8" fill="#f5f0e8"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+name: Refresh Ephemeris Data
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Refresh ephemeris data from JPL HORIZONS
+        run: node scripts/refresh-ephemeris.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet src/lib/registry/bodies/ && echo "No changes" && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/lib/registry/bodies/
+          git commit -m "chore: refresh ephemeris data ($(date -u +%Y-%m-%d))"
+          git push

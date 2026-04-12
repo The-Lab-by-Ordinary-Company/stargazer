@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Stargazer">
+  <defs>
+    <clipPath id="disc">
+      <circle cx="120" cy="120" r="112"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#disc)">
+    <!-- Night sky -->
+    <circle cx="120" cy="120" r="112" fill="#141414"/>
+    <!-- Atmosphere bands -->
+    <path d="M -10 30 Q 120 50 250 20" fill="none" stroke="#f5f0e8" stroke-width="2.5" opacity="0.85"/>
+    <path d="M -10 60 Q 120 88 250 56" fill="none" stroke="#f5f0e8" stroke-width="2" opacity="0.6"/>
+    <path d="M -10 92 Q 120 122 250 90" fill="none" stroke="#f5f0e8" stroke-width="1.5" opacity="0.35"/>
+    <!-- Sunrise dome -->
+    <ellipse cx="120" cy="220" rx="180" ry="80" fill="#e8441e"/>
+    <ellipse cx="120" cy="232" rx="140" ry="58" fill="#c83815"/>
+    <path d="M -20 150 Q 120 138 260 150" fill="none" stroke="#f5f0e8" stroke-width="1.5" opacity="0.55"/>
+    <!-- Single feature star -->
+    <polygon transform="translate(120 80)" points="0,-22 4,-4 22,0 4,4 0,22 -4,4 -22,0 -4,-4" fill="#f5f0e8"/>
+  </g>
+</svg>

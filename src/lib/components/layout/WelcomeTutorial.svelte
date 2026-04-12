@@ -60,7 +60,11 @@
   }
 </script>
 
-<div class="fixed inset-0 z-[70]">
+<div
+  class="fixed inset-0 z-[70]"
+  onpointerdown={(e) => e.stopPropagation()}
+  onpointerup={(e) => e.stopPropagation()}
+>
   <!-- Backdrop: darkens everything except spotlighted areas -->
   <div class="absolute inset-0 bg-[#141414]/55 backdrop-blur-[2px]"></div>
 

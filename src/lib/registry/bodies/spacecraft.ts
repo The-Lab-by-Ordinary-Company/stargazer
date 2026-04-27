@@ -112,7 +112,7 @@ const _l2Tmp = new Vector3();
 
 // Wave-3 element epoch — All Keplerian element sets below use this
 // epoch for their reference mean anomaly.
-const EPOCH_JD = 2461151; // JD TDB at 2026-04-20 00:00 UTC
+const EPOCH_JD = 2461158; // JD TDB at 2026-04-27 00:00 UTC
 // MAVEN's HORIZONS ephemeris extends only to 2026-03-01, so its element
 // set is captured at that earlier epoch. Forward propagation handles the
 // difference automatically via the period.
@@ -143,13 +143,13 @@ const MRO = spacecraftPointMarker({
   ],
   offsetFn: orbiterOffset({
     parentId: 'mars',
-    a_km: 3651.406,
-    e: 0.006147,
-    i_deg: 74.26157,
-    Omega_deg: 214.5278,
-    omega_deg: 278.5457,
-    M_deg: 28.8672,
-    period_days: 0.077534,
+    a_km: 3660.832,
+    e: 0.009453,
+    i_deg: 73.17742,
+    Omega_deg: 218.1548,
+    omega_deg: 295.2642,
+    M_deg: 300.7638,
+    period_days: 0.077834,
     epoch_jd: EPOCH_JD
   })
 });
@@ -211,13 +211,13 @@ const MARS_EXPRESS = spacecraftPointMarker({
   ],
   offsetFn: orbiterOffset({
     parentId: 'mars',
-    a_km: 8803.703,
-    e: 0.571523,
-    i_deg: 112.89299,
-    Omega_deg: 99.3016,
-    omega_deg: 192.5297,
-    M_deg: 30.6376,
-    period_days: 0.290268,
+    a_km: 8814.498,
+    e: 0.571677,
+    i_deg: 112.93357,
+    Omega_deg: 98.8523,
+    omega_deg: 188.3319,
+    M_deg: 49.7603,
+    period_days: 0.290802,
     epoch_jd: EPOCH_JD
   })
 });
@@ -245,13 +245,13 @@ const TGO = spacecraftPointMarker({
   ],
   offsetFn: orbiterOffset({
     parentId: 'mars',
-    a_km: 3782.646,
-    e: 0.007454,
-    i_deg: 91.86530,
-    Omega_deg: 135.5493,
-    omega_deg: 298.9834,
-    M_deg: 306.4297,
-    period_days: 0.081751,
+    a_km: 3783.031,
+    e: 0.007144,
+    i_deg: 97.32165,
+    Omega_deg: 119.4358,
+    omega_deg: 277.1718,
+    M_deg: 139.3913,
+    period_days: 0.081764,
     epoch_jd: EPOCH_JD
   })
 });
@@ -333,13 +333,13 @@ const JUNO = spacecraftPointMarker({
   ],
   offsetFn: orbiterOffset({
     parentId: 'jupiter',
-    a_km: 2946925.23,
-    e: 0.973770,
-    i_deg: 100.26529,
-    Omega_deg: 291.6084,
-    omega_deg: 107.7689,
-    M_deg: 237.4334,
-    period_days: 32.685458,
+    a_km: 2947493.45,
+    e: 0.973735,
+    i_deg: 100.28300,
+    Omega_deg: 291.5678,
+    omega_deg: 107.7524,
+    M_deg: 314.5564,
+    period_days: 32.694912,
     epoch_jd: EPOCH_JD
   })
 });
@@ -385,7 +385,7 @@ const PARKER = spacecraftPointMarker({
   externalId: '-96',
   color: '#E8441E',
   cameraDistance: 5,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'Parker Solar Probe flies closer to the Sun than any previous spacecraft, diving through the solar corona to study the solar wind and magnetic fields. It has broken speed records, becoming the fastest human-made object.',
   facts: [
@@ -397,7 +397,7 @@ const PARKER = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/parker-solar-probe/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(0.57644669, -0.43986553, -0.03930347))
+  offsetFn: staticOffset(helioAuToScene(0.60710325, -0.40239790, -0.04055094))
 });
 
 const SOLAR_ORBITER = spacecraftPointMarker({
@@ -409,7 +409,7 @@ const SOLAR_ORBITER = spacecraftPointMarker({
   externalId: '-144',
   color: '#E8441E',
   cameraDistance: 5,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'Solar Orbiter uses gravity assists from Venus to tilt its orbit and obtain the first direct images of the Sun\'s polar regions. It carries ten instruments studying the heliosphere and solar wind.',
   facts: [
@@ -421,7 +421,7 @@ const SOLAR_ORBITER = spacecraftPointMarker({
   sources: [
     { name: 'ESA Mission Page', url: 'https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter' }
   ],
-  offsetFn: staticOffset(helioAuToScene(0.42021617, 0.62796623, 0.16875314))
+  offsetFn: staticOffset(helioAuToScene(0.35528715, 0.71625328, 0.17552143))
 });
 
 const BEPI = spacecraftPointMarker({
@@ -433,7 +433,7 @@ const BEPI = spacecraftPointMarker({
   externalId: '-121',
   color: '#8A8A85',
   cameraDistance: 5,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'BepiColombo is a joint ESA/JAXA mission carrying two orbiters to Mercury. It uses nine gravity assists (Earth, Venus, and Mercury flybys) to slow down enough to enter Mercury orbit in late 2025.',
   facts: [
@@ -445,7 +445,7 @@ const BEPI = spacecraftPointMarker({
   sources: [
     { name: 'ESA Mission Page', url: 'https://www.esa.int/Science_Exploration/Space_Science/BepiColombo' }
   ],
-  offsetFn: staticOffset(helioAuToScene(0.30617640, -0.27214692, -0.05017377))
+  offsetFn: staticOffset(helioAuToScene(0.36187923, -0.09126804, -0.04053383))
 });
 
 const LUCY = spacecraftPointMarker({
@@ -457,7 +457,7 @@ const LUCY = spacecraftPointMarker({
   externalId: '-49',
   color: '#8A8A85',
   cameraDistance: 8,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'Lucy is the first mission to explore the Jupiter Trojan asteroids, primitive bodies trapped in Jupiter\'s orbit that are thought to be remnants of the early solar system. It will visit eight asteroids over 12 years.',
   facts: [
@@ -469,7 +469,7 @@ const LUCY = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/lucy/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(-3.69847455, -2.49131110, -0.25320252))
+  offsetFn: staticOffset(helioAuToScene(-3.70478982, -2.53721534, -0.25314366))
 });
 
 const PSYCHE = spacecraftPointMarker({
@@ -481,7 +481,7 @@ const PSYCHE = spacecraftPointMarker({
   externalId: '-255',
   color: '#787878',
   cameraDistance: 8,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'The Psyche mission is traveling to asteroid 16 Psyche, a metal-rich body that may be the exposed core of an early planetesimal. It will be the first mission to explore a world made largely of metal.',
   facts: [
@@ -493,7 +493,7 @@ const PSYCHE = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/psyche/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(1.43253765, -0.21758683, -0.03703694))
+  offsetFn: staticOffset(helioAuToScene(1.42887545, -0.10446483, -0.03528137))
 });
 
 const JUICE = spacecraftPointMarker({
@@ -505,7 +505,7 @@ const JUICE = spacecraftPointMarker({
   externalId: '-28',
   color: '#787878',
   cameraDistance: 8,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'JUICE (Jupiter Icy Moons Explorer) will study Jupiter\'s three large ocean-bearing moons: Ganymede, Callisto, and Europa. It will ultimately enter orbit around Ganymede, the first spacecraft to orbit a moon other than our own.',
   facts: [
@@ -517,7 +517,7 @@ const JUICE = spacecraftPointMarker({
   sources: [
     { name: 'ESA Mission Page', url: 'https://www.esa.int/Science_Exploration/Space_Science/Juice' }
   ],
-  offsetFn: staticOffset(helioAuToScene(0.22945984, -1.55839228, -0.00434852))
+  offsetFn: staticOffset(helioAuToScene(0.30380852, -1.54472166, -0.00432968))
 });
 
 const EUROPA_CLIPPER = spacecraftPointMarker({
@@ -529,7 +529,7 @@ const EUROPA_CLIPPER = spacecraftPointMarker({
   externalId: '-159',
   color: '#A09A90',
   cameraDistance: 8,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'Europa Clipper will perform nearly 50 close flybys of Jupiter\'s moon Europa to investigate whether its subsurface ocean has conditions suitable for life. It is the largest spacecraft NASA has ever built for a planetary mission.',
   facts: [
@@ -541,7 +541,7 @@ const EUROPA_CLIPPER = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/europa-clipper/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(-1.09782488, -1.58019076, 0.01920945))
+  offsetFn: staticOffset(helioAuToScene(-1.02018651, -1.59033937, 0.01646395))
 });
 
 // ── Interstellar / outer solar system ───────────────────────────────────
@@ -560,7 +560,7 @@ const VOYAGER_1 = spacecraftPointMarker({
   color: '#E8441E',
   cameraDistance: 50,
   labelTier: 2,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'Voyager 1 is the farthest human-made object from Earth, now traveling through interstellar space beyond the heliopause. Launched in 1977, it flew by Jupiter and Saturn before heading out of the solar system.',
   facts: [
@@ -572,7 +572,7 @@ const VOYAGER_1 = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/voyager/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(-31.96747473, -135.53928158, 98.06673236))
+  offsetFn: staticOffset(helioAuToScene(-31.97585081, -135.59431042, 98.10648784))
 });
 
 const VOYAGER_2 = spacecraftPointMarker({
@@ -585,7 +585,7 @@ const VOYAGER_2 = spacecraftPointMarker({
   color: '#8A8A85',
   cameraDistance: 50,
   labelTier: 2,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'Voyager 2 is the only spacecraft to have visited all four giant planets: Jupiter, Saturn, Uranus, and Neptune. It crossed the heliopause in 2018 and continues to return data from interstellar space.',
   facts: [
@@ -597,7 +597,7 @@ const VOYAGER_2 = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/voyager/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(39.49335328, -104.58230328, -88.63456060))
+  offsetFn: staticOffset(helioAuToScene(39.51034611, -104.62006805, -88.68032238))
 });
 
 const NEW_HORIZONS = spacecraftPointMarker({
@@ -610,7 +610,7 @@ const NEW_HORIZONS = spacecraftPointMarker({
   color: '#A09A90',
   cameraDistance: 30,
   labelTier: 3,
-  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 20, 2026' },
+  tracking: { mode: 'Snapshot', source: 'JPL HORIZONS heliocentric ecliptic Cartesian', epoch: 'Apr 27, 2026' },
   description:
     'New Horizons performed the first flyby of Pluto in 2015, revealing a geologically active world with nitrogen glaciers and a thin atmosphere. It later flew by Kuiper Belt object Arrokoth, the most distant object ever visited.',
   facts: [
@@ -622,7 +622,7 @@ const NEW_HORIZONS = spacecraftPointMarker({
   sources: [
     { name: 'NASA Mission Page', url: 'https://science.nasa.gov/mission/new-horizons/' }
   ],
-  offsetFn: staticOffset(helioAuToScene(20.34572965, -61.09570069, 2.24407308))
+  offsetFn: staticOffset(helioAuToScene(20.36720741, -61.14625908, 2.24606301))
 });
 
 // ── Aggregate export ────────────────────────────────────────────────────
